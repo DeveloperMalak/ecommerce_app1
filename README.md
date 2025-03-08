@@ -19,7 +19,7 @@ A **Flutter**-based e-commerce application with **Firebase authentication** and 
 Follow these steps to set up the project locally.
 
 ### **1️⃣ Clone the Repository**  
-git clone https://github.com/DeveloperMalak/emart-flutter.git
+git clone [https://github.com/DeveloperMalak/emart-flutter.git](https://github.com/DeveloperMalak/ecommerce_app1.git)
 cd emart-flutter
 2️⃣ Install Dependencies
 
