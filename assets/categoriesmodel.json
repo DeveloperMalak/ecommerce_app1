@@ -1,0 +1,80 @@
+{
+    "categories": [
+        {
+            "name":"WomenClothings",
+            "subcategories": [
+                "Wedding&events",
+                "tops&sets",
+                "watches"
+            ]
+        },
+        {
+            "name":"MenClothing&Fashions",
+            "subcategories": [
+                "outwear&jackets",
+                "formaldress",
+                "accessories"
+            ]
+        },
+        
+        
+
+        {
+            "name":"Computer&Accessories",
+            "subcategories": [
+                "grapicscard",
+                "gamingpc",
+                "keyboard"
+            ]
+        },
+        {
+            "name":"AutoMobile",
+            "subcategories": [
+                "prius",
+                "vitz",
+                "corolla"
+            ]
+        },
+        {
+            "name":"Kids&Toys",
+            "subcategories": [
+                "babyclothings",
+                "shoes&bags",
+                "girldress"
+            ]
+        },
+        {
+            "name":"Sports",
+            "subcategories": [
+                "cycling",
+                "sneakers",
+                "swimming"
+            ]
+        },
+        {
+            "name":"Jewlery",
+            "subcategories": [
+                "chains",
+                "weddingsets",
+                "top"
+            ]
+        },
+        {
+            "name":"CellPhone&Tabs",
+            "subcategories": [
+                "iphone",
+                "android",
+                "vivo"
+            ]
+        },
+        {
+            "name":"Furniture",
+            "subcategories": [
+                "weddingsets",
+                "beds",
+                "chairs"
+            ]
+        }
+    ]
+}
+

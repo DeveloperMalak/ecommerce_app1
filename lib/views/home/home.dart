@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:eapp/common_widget.dart/exit_dialog.dart';
 import 'package:eapp/consts/consts.dart';
 import 'package:eapp/controller/home_controller.dart';
 import 'package:eapp/views/cart_screen/cartscreen.dart';
@@ -25,22 +28,36 @@ class Home extends StatelessWidget {
       CartScreen(),
       ProfileScreen()
     ];
-    return Scaffold(
-      body: Column(
-        children: [
-          Obx(()=> Expanded(child: navbody.elementAt(controller.currentNavIndex.value))),
-        ],
-      ),
-      bottomNavigationBar: Obx(
-       ()=>  BottomNavigationBar(items: navbaritem,
-        selectedItemColor: redColor,
-        currentIndex: controller.currentNavIndex.value,
-        selectedLabelStyle:TextStyle(fontFamily: semibold) ,
-        type: BottomNavigationBarType.fixed,
-        onTap: (value){
-          controller.currentNavIndex.value=value;
-        },
-        backgroundColor: whiteColor,),
+    // ignore: deprecated_member_use
+    return WillPopScope(
+      
+      onWillPop: ()async { 
+        
+        showDialog(
+          barrierDismissible: false,
+          context: context, 
+        builder: (context){
+          return exitDialog(context);
+        });
+        return false;
+       },
+      child: Scaffold(
+        body: Column(
+          children: [
+            Obx(()=> Expanded(child: navbody.elementAt(controller.currentNavIndex.value))),
+          ],
+        ),
+        bottomNavigationBar: Obx(
+         ()=>  BottomNavigationBar(items: navbaritem,
+          selectedItemColor: redColor,
+          currentIndex: controller.currentNavIndex.value,
+          selectedLabelStyle:TextStyle(fontFamily: semibold) ,
+          type: BottomNavigationBarType.fixed,
+          onTap: (value){
+            controller.currentNavIndex.value=value;
+          },
+          backgroundColor: whiteColor,),
+        ),
       ),
     );
   }

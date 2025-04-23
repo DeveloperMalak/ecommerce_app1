@@ -1,11 +1,13 @@
+import 'package:eapp/controller/products_controller.dart';
 import 'package:eapp/views/splashscreen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'consts/consts.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
+   Get.put(ProductsController());
   await Firebase.initializeApp();
   runApp(const MyApp());
 }

@@ -1,41 +1,41 @@
-class CatergoriesModel {
-  List<Categories>? categories;
+class CategoriesModel {
+  List<Category>? categories;
 
-  CatergoriesModel({this.categories});
+  CategoriesModel({this.categories});
 
-  CatergoriesModel.fromJson(Map<String, dynamic> json) {
+  CategoriesModel.fromJson(Map<String, dynamic> json) {
     if (json['categories'] != null) {
-      categories = <Categories>[];
+      categories = <Category>[];
       json['categories'].forEach((v) {
-        categories!.add(new Categories.fromJson(v));
+        categories!.add(Category.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.categories != null) {
-      data['categories'] = this.categories!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (categories != null) {
+      data['categories'] = categories!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Categories {
+class Category {
   String? name;
-  List<String>? subcategoreis;
+  List<String>? subcategories; // Corrected property name
 
-  Categories({this.name, this.subcategoreis});
+  Category({this.name, this.subcategories});
 
-  Categories.fromJson(Map<String, dynamic> json) {
+  Category.fromJson(Map<String, dynamic> json) {
     name = json['name'];
-    subcategoreis = json['subcategoreis'].cast<String>();
+    subcategories = List<String>.from(json['subcategories'] ?? []); // Fixing typo mapping
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['subcategoreis'] = this.subcategoreis;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['subcategories'] = subcategories; // Keeping the original key name for JSON output
     return data;
   }
 }
